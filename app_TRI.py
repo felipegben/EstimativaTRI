@@ -16,7 +16,12 @@ import streamlit as st
 #importar arquivo com TRI min media max para cada área (média dos últimos anos)
 #filepath
 areas = ['LC','CH','CN','MT']
-df = pd.concat([pd.read_csv(i+'.csv', delimiter = ',', index_col=None, header=0, encoding='latin-1') for i in areas],axis = 1)
+
+@st.cache_data
+def get_df_from_csv(fn):
+    return pd.read_csv(fn)
+    
+df = pd.concat([get_df_from_csv(i+'.csv', delimiter = ',', index_col=None, header=0, encoding='latin-1') for i in areas],axis = 1)
     
 
 
