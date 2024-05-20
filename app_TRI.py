@@ -6,8 +6,6 @@ Created on Sun May 19 18:08:15 2024
 
 Programa pra mostrar a media TRI para um numero de acertos em um app streamlit
 """
-#streamlit run c:\users\usuario\dropbox\python\Media_TRI\app_TRI.py
-
 import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
@@ -16,9 +14,9 @@ from matplotlib.ticker import (MultipleLocator, FormatStrFormatter, AutoMinorLoc
 import streamlit as st
 
 #importar arquivo com TRI min media max para cada área (média dos últimos anos)
-filepath = 'C:\\Users\\usuario\\Dropbox\\Python\\Media_TRI\\'
+#filepath
 areas = ['LC','CH','CN','MT']
-df = pd.concat([pd.read_csv(filepath+i+'.csv', delimiter = ',', index_col=None, header=0, encoding='latin-1') for i in areas],axis = 1)
+df = pd.concat([pd.read_csv(i+'.csv', delimiter = ',', index_col=None, header=0, encoding='latin-1') for i in areas],axis = 1)
     
 
 
