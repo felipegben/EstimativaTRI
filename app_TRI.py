@@ -23,7 +23,7 @@ df = pd.concat([pd.read_csv(i+'.csv', delimiter = ',', index_col=None, header=0,
 
 
 #montar pagina streamlit e pedir input de acertos
-st.title('Média TRI')
+st.title('Estimativa TRI')
 
 acertoLC = st.slider("Acertos em Linguagens",0,45)
 acertoCH = st.slider("Acertos em Humanas",0,45)
